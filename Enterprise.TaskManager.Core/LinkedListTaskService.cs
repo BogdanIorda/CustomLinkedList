@@ -59,7 +59,7 @@
                 return;
             }
 
-            if (head.Description == description)
+            if (head.Description.Equals(description))
             {
                 head = head.Next;
 

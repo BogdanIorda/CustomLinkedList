@@ -1,11 +1,10 @@
-﻿namespace Enterprise.TaskManager.Core
+﻿namespace Enterprise.TaskManager.Core;
+
+public interface ITaskService
 {
-    public interface ITaskService
-    {
-        void AddTask(string description);
+    void AddTask(string description);
 
-        void ShowAllTasks();
+    void ShowAllTasks();
 
-        void RemoveTask(string description);
-    }
+    void RemoveTask(string description);
 }

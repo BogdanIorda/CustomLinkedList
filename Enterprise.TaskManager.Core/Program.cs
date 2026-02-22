@@ -12,7 +12,7 @@ while (true)
     Console.WriteLine("[4] Exit Task");
     Console.WriteLine();
 
-    string action = Console.ReadLine();
+    string action = Console.ReadLine() ?? string.Empty;
 
     switch (action)
     {

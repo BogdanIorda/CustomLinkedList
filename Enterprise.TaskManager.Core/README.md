@@ -7,4 +7,4 @@ A console-based Task Manager built from scratch to understand how data structure
 * **Encapsulation:** Keeping the `Node` class and memory pointers (`head`, `tail`) private so they can't be accidentally modified from outside the class.
 * **Memory Management:** Writing the pointer logic to bypass and remove a node, and learning how the .NET Garbage Collector automatically cleans up that unreferenced data.
 * **Pointers:** Using a tail pointer to add new tasks instantly without looping through the entire list.
-* **Pointers:** Using a tail pointer to add new tasks instantly without looping through the entire list.
+* **Pointers:** Using a tail pointer to add new tasks instantly withogitut looping through the entire list.
