@@ -74,6 +74,7 @@ namespace Enterprise.TaskManager.Core
                 {
                     tail = null;
                 }
+                SaveTasksToFile();
                 return;
             }
 
@@ -89,6 +90,7 @@ namespace Enterprise.TaskManager.Core
                     {
                         tail = previous;
                     }
+                    SaveTasksToFile();
                     return;
                 }
                 else
@@ -97,7 +99,6 @@ namespace Enterprise.TaskManager.Core
                     current = current.Next;
                 }
             }
-            SaveTasksToFile();
         }
 
         private void SaveTasksToFile()
