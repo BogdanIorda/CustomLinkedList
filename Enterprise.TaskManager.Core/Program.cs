@@ -19,7 +19,7 @@ while (true)
         case "1":
             Console.Write("Enter task description: ");
 
-            string task = Console.ReadLine();
+            string task = Console.ReadLine() ?? string.Empty;
             taskService.AddTask(task);
             break;
 
@@ -31,7 +31,7 @@ while (true)
 
         case "3":
             Console.Write("Which task should be removed? ");
-            string taskToRemove = Console.ReadLine();
+            string taskToRemove = Console.ReadLine() ?? string.Empty;
             taskService.RemoveTask(taskToRemove);
             break;
 

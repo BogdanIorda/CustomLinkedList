@@ -1,4 +1,6 @@
-﻿namespace Enterprise.TaskManager.Core
+﻿using System.Text.Json;
+
+namespace Enterprise.TaskManager.Core
 {
     public class LinkedListTaskService : ITaskService
     {
@@ -17,6 +19,11 @@
         private Node? head;
         private Node? tail;
 
+        public LinkedListTaskService()
+        {
+            LoadTasksFromFile();
+        }
+
         public void AddTask(string description)
 
         {
@@ -28,13 +35,13 @@
             {
                 head = newNode;
                 tail = newNode;
-                return;
             }
             else
             {
                 tail!.Next = newNode;
                 tail = newNode;
             }
+            SaveTasksToFile();
         }
 
         public void ShowAllTasks()
@@ -89,6 +96,36 @@
                     previous = current;
                     current = current.Next;
                 }
+            }
+            SaveTasksToFile();
+        }
+
+        private void SaveTasksToFile()
+        {
+            var taskDescriptions = new List<string>();
+            var current = head;
+
+            while (current != null)
+            {
+                taskDescriptions.Add(current.Description);
+                current = current.Next;
+            }
+            string serializedTasks = JsonSerializer.Serialize(taskDescriptions);
+
+            File.WriteAllText("tasks.json", serializedTasks);
+        }
+
+        private void LoadTasksFromFile()
+        {
+            if (!File.Exists("tasks.json")) return;
+
+            var jsonContent = File.ReadAllText("tasks.json");
+
+            var savedTasks = JsonSerializer.Deserialize<List<string>>(jsonContent);
+
+            foreach (string task in savedTasks!)
+            {
+                AddTask(task);
             }
         }
     }
