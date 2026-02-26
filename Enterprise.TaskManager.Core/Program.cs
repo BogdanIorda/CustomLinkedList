@@ -1,6 +1,6 @@
 ﻿using Enterprise.TaskManager.Core;
 
-ITaskService taskService = new LinkedListTaskService();
+ITaskService taskService = new SqlTaskService();
 
 while (true)
 {
