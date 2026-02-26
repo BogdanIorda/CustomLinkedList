@@ -1,4 +1,4 @@
-\# Simple Task Manager (.NET)
+Simple Task Manager (.NET)
 
 
 
@@ -6,7 +6,7 @@ This is a console application I built to learn how C# connects to a database.
 
 
 
-\## What it does
+What it does
 
 \- You can add tasks to a list.
 
@@ -18,7 +18,7 @@ This is a console application I built to learn how C# connects to a database.
 
 
 
-\## How it was built
+How it was built
 
 Originally, I built this from scratch using a custom Linked List and saved the data to a `.json` text file to learn about memory and file storage. 
 
@@ -28,7 +28,7 @@ I have now upgraded the project to use Entity Framework (EF) Core and SQL Server
 
 
 
-\## Tech Stack
+Tech Stack
 
 \- C# / .NET 10 (Console App)
 
@@ -38,7 +38,7 @@ I have now upgraded the project to use Entity Framework (EF) Core and SQL Server
 
 
 
-\## How to run it on your machine
+How to run it on your machine
 
 1\. Open the project in Visual Studio.
 
